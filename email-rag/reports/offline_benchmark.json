@@ -1,0 +1,16 @@
+{
+  "measurement": "actual offline MIME parsing and chunking only",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "rounds": 100,
+  "emails_per_round": 10,
+  "chunks_per_round": 12,
+  "attachments_per_round": 2,
+  "median_batch_ms": 15.346069500083104,
+  "p95_batch_ms": 22.51161599997431,
+  "median_per_email_ms": 1.5346069500083104,
+  "embedding_s": null,
+  "retrieval_s": null,
+  "generation_s": null,
+  "note": "No PostgreSQL or Ollama available in authoring environment. Null values are unmeasured, not zero."
+}

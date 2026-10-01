@@ -1,0 +1,43 @@
+test_attachment_not_written_as_filename (test_core.ParsingTests.test_attachment_not_written_as_filename) ... ok
+test_bad_date_reported (test_core.ParsingTests.test_bad_date_reported) ... ok
+test_chunk_coverage_long_word (test_core.ParsingTests.test_chunk_coverage_long_word) ... ok
+test_csv_html_attachment (test_core.ParsingTests.test_csv_html_attachment) ... ok
+test_html_only_and_hidden_script (test_core.ParsingTests.test_html_only_and_hidden_script) ... ok
+test_invalid_overlap (test_core.ParsingTests.test_invalid_overlap) ... ok
+test_message_id_stable_update_hash_changes (test_core.ParsingTests.test_message_id_stable_update_hash_changes) ... ok
+test_metadata_date_and_attachment (test_core.ParsingTests.test_metadata_date_and_attachment) ... ok
+test_minimal_docx (test_core.ParsingTests.test_minimal_docx) ... ok
+test_multipart_alternative_not_duplicated (test_core.ParsingTests.test_multipart_alternative_not_duplicated) ... ok
+test_pdf_text_extraction (test_core.ParsingTests.test_pdf_text_extraction) ... ok
+test_unicode_headers (test_core.ParsingTests.test_unicode_headers) ... ok
+test_unknown_charset (test_core.ParsingTests.test_unknown_charset) ... ok
+test_unsupported_attachment_reported (test_core.ParsingTests.test_unsupported_attachment_reported) ... ok
+test_budget_never_overflows (test_core.PipelineTests.test_budget_never_overflows) ... ok
+test_cloud_tag_rejected (test_core.PipelineTests.test_cloud_tag_rejected) ... ok
+test_idempotency_and_attachment_embedding (test_core.PipelineTests.test_idempotency_and_attachment_embedding) ... ok
+test_injection_kept_inside_data (test_core.PipelineTests.test_injection_kept_inside_data) ... ok
+test_invented_citation_warning (test_core.PipelineTests.test_invented_citation_warning) ... ok
+test_latest_requires_explicit_mode (test_core.PipelineTests.test_latest_requires_explicit_mode) ... ok
+test_no_hits_no_generation (test_core.PipelineTests.test_no_hits_no_generation) ... ok
+test_query_validation (test_core.PipelineTests.test_query_validation) ... ok
+test_remote_ollama_rejected (test_core.PipelineTests.test_remote_ollama_rejected) ... ok
+test_sources_and_timings (test_core.PipelineTests.test_sources_and_timings) ... ok
+test_vector_safety (test_core.PipelineTests.test_vector_safety) ... ok
+test_cross_user_insert_denied (test_database.DatabaseTests.test_cross_user_insert_denied) ... skipped 'requires local PostgreSQL + pgvector'
+test_explicit_other_user_query_empty (test_database.DatabaseTests.test_explicit_other_user_query_empty) ... skipped 'requires local PostgreSQL + pgvector'
+test_idempotent_replace_and_latest (test_database.DatabaseTests.test_idempotent_replace_and_latest) ... skipped 'requires local PostgreSQL + pgvector'
+test_invalid_token_denied (test_database.DatabaseTests.test_invalid_token_denied) ... skipped 'requires local PostgreSQL + pgvector'
+test_no_scope_empty (test_database.DatabaseTests.test_no_scope_empty) ... skipped 'requires local PostgreSQL + pgvector'
+test_rls_unfiltered_select (test_database.DatabaseTests.test_rls_unfiltered_select) ... skipped 'requires local PostgreSQL + pgvector'
+test_summary_filter (test_database.DatabaseTests.test_summary_filter) ... skipped 'requires local PostgreSQL + pgvector'
+test_vector_retrieval_scoped (test_database.DatabaseTests.test_vector_retrieval_scoped) ... skipped 'requires local PostgreSQL + pgvector'
+test_mbox_sample_count (test_gmail_and_summary.GmailTests.test_mbox_sample_count) ... ok
+test_pagination_and_raw_attachment_preservation (test_gmail_and_summary.GmailTests.test_pagination_and_raw_attachment_preservation) ... ok
+test_wrong_account_rejected (test_gmail_and_summary.GmailTests.test_wrong_account_rejected) ... ok
+test_all_chunks_covered_across_batches (test_gmail_and_summary.SummaryTests.test_all_chunks_covered_across_batches) ... ok
+test_empty_all_matching_no_model_call (test_gmail_and_summary.SummaryTests.test_empty_all_matching_no_model_call) ... ok
+
+----------------------------------------------------------------------
+Ran 38 tests in 0.275s
+
+OK (skipped=8)

@@ -1,0 +1,24 @@
+Message-ID: <a03-marketing@example.test>
+From: Marketing Team <marketing@example.test>
+To: Alice <alice@example.test>
+Subject: Marketing team weekly update
+Date: Fri, 18 Sep 2026 15:00:00 -0400
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============4326062166451381581=="
+
+--===============4326062166451381581==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+The marketing team has completed draft launch messaging.
+
+--===============4326062166451381581==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body><p>The marketing team has completed draft launch messaging.</p><s=
+cript>ignore me</script></body></html>
+
+--===============4326062166451381581==--

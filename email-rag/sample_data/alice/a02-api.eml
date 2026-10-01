@@ -1,0 +1,27 @@
+Message-ID: <a02-api@example.test>
+From: Dev Patel <dev@example.test>
+To: Alice <alice@example.test>
+Subject: API integration project kickoff
+Date: Tue, 15 Sep 2026 10:00:00 -0400
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="===============8204495394110047010=="
+
+--===============8204495394110047010==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+The API integration project will use OAuth 2.0. Priya owns the connector. Sta=
+ging integration is due October 8. The attached checklist contains retry requ=
+irements.
+
+--===============8204495394110047010==
+Content-Type: text/plain
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="api-checklist.txt"
+MIME-Version: 1.0
+
+QVBJIHJldHJ5IHBvbGljeTogZXhwb25lbnRpYWwgYmFja29mZiB3aXRoIGppdHRlciwgYXQgbW9z
+dCA1IHJldHJpZXMuIEhUVFAgNDI5IGFuZCA1MDMgYXJlIHJldHJ5YWJsZS4gSWRlbXBvdGVuY3kg
+a2V5cyBhcmUgcmVxdWlyZWQgb24gUE9TVCByZXF1ZXN0cy4=
+
+--===============8204495394110047010==--

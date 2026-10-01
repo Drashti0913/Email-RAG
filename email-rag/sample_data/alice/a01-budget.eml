@@ -1,0 +1,25 @@
+Message-ID: <a01-budget@example.test>
+From: Sarah Chen <sarah@example.test>
+To: Alice <alice@example.test>
+Subject: Q4 budget approval
+Date: Mon, 14 Sep 2026 09:00:00 -0400
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="===============6683286048939483884=="
+
+--===============6683286048939483884==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+The approved Q4 budget is $120,000. Allocate $70,000 to engineering and $50,0=
+00 to marketing. Please freeze spending plans by September 25.
+
+--===============6683286048939483884==
+Content-Type: text/csv
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="q4-budget.csv"
+MIME-Version: 1.0
+
+ZGVwYXJ0bWVudCxhbW91bnRfdXNkCmVuZ2luZWVyaW5nLDcwMDAwCm1hcmtldGluZyw1MDAwMApj
+b250aW5nZW5jeV9pbmNsdWRlZF9pbl9lbmdpbmVlcmluZyw1MDAwCg==
+
+--===============6683286048939483884==--
