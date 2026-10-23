@@ -1,0 +1,1590 @@
+{
+  "status": "live measured results",
+  "python": "3.12.15",
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "processor": "arm",
+  "models": {
+    "nomic-embed-text:v1.5": {
+      "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "nomic-bert",
+        "families": [
+          "nomic-bert"
+        ],
+        "parameter_size": "137M",
+        "quantization_level": "F16"
+      }
+    },
+    "mistral:7b-instruct-v0.3-q4_K_M": {
+      "digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "7.2B",
+        "quantization_level": "Q4_K_M"
+      }
+    }
+  },
+  "runs": 3,
+  "embedding_batch": {
+    "texts": 9,
+    "seconds": 0.6420549169997685,
+    "texts_per_second": 14.017492525492559
+  },
+  "timings": {
+    "query_embedding_s": {
+      "median": 0.021840959030669183,
+      "max": 0.08720716595416889,
+      "p95_nearest_rank": 0.08720716595416889
+    },
+    "retrieval_s": {
+      "median": 0.009034582995809615,
+      "max": 0.050543124962132424,
+      "p95_nearest_rank": 0.050543124962132424
+    },
+    "generation_s": {
+      "median": 7.56140016700374,
+      "max": 15.326147583022248,
+      "p95_nearest_rank": 15.326147583022248
+    },
+    "total_s": {
+      "median": 7.566517333034426,
+      "max": 15.352387666003779,
+      "p95_nearest_rank": 15.352387666003779
+    }
+  },
+  "results": [
+    {
+      "run": 0,
+      "question": "What did Sarah say about the Q4 budget?",
+      "result": {
+        "answer": " Sarah approved the Q4 budget, allocating $70,000 to engineering and $50,000 to marketing. [S1, S2]",
+        "warnings": [],
+        "sources": [
+          {
+            "label": "S1",
+            "email_id": "5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb",
+            "chunk_no": 0,
+            "subject": "Q4 budget approval",
+            "sender": "Sarah Chen <sarah@example.test>",
+            "date": "2026-09-14 13:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb-cbd40aece779d0ab.eml",
+            "excerpt": "Subject: Q4 budget approval\nFrom: Sarah Chen <sarah@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-14 13:00:00+00:00\nPart: body\nThe approved Q4 budget is $120,000. Allocate $70,000 to engineering and $50,000 to marketing. Please freeze spending plans by September 25.",
+            "similarity": 0.7694941666154286
+          },
+          {
+            "label": "S2",
+            "email_id": "5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb",
+            "chunk_no": 1,
+            "subject": "Q4 budget approval",
+            "sender": "Sarah Chen <sarah@example.test>",
+            "date": "2026-09-14 13:00:00+00:00",
+            "part": "q4-budget.csv",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb-cbd40aece779d0ab.eml",
+            "excerpt": "Subject: Q4 budget approval\nFrom: Sarah Chen <sarah@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-14 13:00:00+00:00\nPart: q4-budget.csv\ndepartment,amount_usd\nengineering,70000\nmarketing,50000\ncontingency_included_in_engineering,5000",
+            "similarity": 0.722155385531361
+          },
+          {
+            "label": "S3",
+            "email_id": "906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943",
+            "chunk_no": 0,
+            "subject": "Re: Product launch - revised plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-24 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943-d7406164f86e7cd7.eml",
+            "excerpt": "Subject: Re: Product launch - revised plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-24 15:00:00+00:00\nPart: body\nThe product launch is moved to October 22 because the security review needs an extra week. This replaces the October 15 plan.",
+            "similarity": 0.5262635318918824
+          },
+          {
+            "label": "S4",
+            "email_id": "a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81",
+            "chunk_no": 0,
+            "subject": "Marketing team final campaign update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-30 20:30:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81-55d1c5aa398935cc.eml",
+            "excerpt": "Subject: Marketing team final campaign update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-30 20:30:00+00:00\nPart: body\nThe marketing team approved the email campaign for the October 22 product launch. Campaign owner: Elena. Landing page review is due October 5.",
+            "similarity": 0.49997234345141806
+          },
+          {
+            "label": "S5",
+            "email_id": "35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8",
+            "chunk_no": 0,
+            "subject": "Product launch - original plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-21 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8-19801e04053bb227.eml",
+            "excerpt": "Subject: Product launch - original plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-21 15:00:00+00:00\nPart: body\nThe product launch was planned for October 15. Maya owns launch coordination. A security review is still pending.",
+            "similarity": 0.49404043243388984
+          },
+          {
+            "label": "S6",
+            "email_id": "225ad28ff1453f0011f75cf4426e286a2155a1212c9426469ebf1f55c4887223",
+            "chunk_no": 0,
+            "subject": "Friday lunch",
+            "sender": "Chris <chris@example.test>",
+            "date": "2026-09-30 16:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/225ad28ff1453f0011f75cf4426e286a2155a1212c9426469ebf1f55c4887223-5304470c0a0ddac6.eml",
+            "excerpt": "Subject: Friday lunch\nFrom: Chris <chris@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-30 16:00:00+00:00\nPart: body\nLunch is at noon at the office cafe. Please bring your own mug.",
+            "similarity": 0.47613313651880573
+          },
+          {
+            "label": "S7",
+            "email_id": "0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1",
+            "chunk_no": 0,
+            "subject": "Marketing team weekly update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-18 19:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1-8d0d9ef167daef67.eml",
+            "excerpt": "Subject: Marketing team weekly update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-18 19:00:00+00:00\nPart: body\nThe marketing team has completed draft launch messaging.",
+            "similarity": 0.47320372345381045
+          },
+          {
+            "label": "S8",
+            "email_id": "53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df",
+            "chunk_no": 1,
+            "subject": "API integration project kickoff",
+            "sender": "Dev Patel <dev@example.test>",
+            "date": "2026-09-15 14:00:00+00:00",
+            "part": "api-checklist.txt",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df-1c5a06ffb576d003.eml",
+            "excerpt": "Subject: API integration project kickoff\nFrom: Dev Patel <dev@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-15 14:00:00+00:00\nPart: api-checklist.txt\nAPI retry policy: exponential backoff with jitter, at most 5 retries. HTTP 429 and 503 are retryable. Idempotency keys are required on POST requests.",
+            "similarity": 0.45759327836057717
+          }
+        ],
+        "metrics": {
+          "query_embedding_s": 0.011015416006557643,
+          "retrieval_s": 0.016697040991857648,
+          "generation_s": 8.798013125022408,
+          "total_s": 8.826177625043783,
+          "ollama_eval_count": 37,
+          "ollama_eval_duration_ns": 2942939000
+        },
+        "retrieved_chunks": 8,
+        "context_chunks": 8,
+        "coverage": "bounded retrieval; verify completeness for broad summaries"
+      },
+      "expected_source_recall": 1.0,
+      "keyword_coverage_proxy": 0.6666666666666666
+    },
+    {
+      "run": 0,
+      "question": "Show me emails discussing the API integration project",
+      "result": {
+        "answer": " Based on the provided evidence, the following emails discuss the API integration project:\n\n1. S1: The email from Dev Patel with the subject \"API integration project kickoff\" provides details about the project, including the use of OAuth 2.0, the owner of the connector, and the staging integration deadline. [S1]\n\n2. S2: The attached checklist in the email from Dev Patel, also with the subject \"API integration project kickoff\", contains the API retry policy. [S2]",
+        "warnings": [],
+        "sources": [
+          {
+            "label": "S1",
+            "email_id": "53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df",
+            "chunk_no": 0,
+            "subject": "API integration project kickoff",
+            "sender": "Dev Patel <dev@example.test>",
+            "date": "2026-09-15 14:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df-1c5a06ffb576d003.eml",
+            "excerpt": "Subject: API integration project kickoff\nFrom: Dev Patel <dev@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-15 14:00:00+00:00\nPart: body\nThe API integration project will use OAuth 2.0. Priya owns the connector. Staging integration is due October 8. The attached checklist contains retry requirements.",
+            "similarity": 0.7213152217081172
+          },
+          {
+            "label": "S2",
+            "email_id": "53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df",
+            "chunk_no": 1,
+            "subject": "API integration project kickoff",
+            "sender": "Dev Patel <dev@example.test>",
+            "date": "2026-09-15 14:00:00+00:00",
+            "part": "api-checklist.txt",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df-1c5a06ffb576d003.eml",
+            "excerpt": "Subject: API integration project kickoff\nFrom: Dev Patel <dev@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-15 14:00:00+00:00\nPart: api-checklist.txt\nAPI retry policy: exponential backoff with jitter, at most 5 retries. HTTP 429 and 503 are retryable. Idempotency keys are required on POST requests.",
+            "similarity": 0.6883182359215971
+          },
+          {
+            "label": "S3",
+            "email_id": "a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81",
+            "chunk_no": 0,
+            "subject": "Marketing team final campaign update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-30 20:30:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81-55d1c5aa398935cc.eml",
+            "excerpt": "Subject: Marketing team final campaign update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-30 20:30:00+00:00\nPart: body\nThe marketing team approved the email campaign for the October 22 product launch. Campaign owner: Elena. Landing page review is due October 5.",
+            "similarity": 0.603233897493259
+          },
+          {
+            "label": "S4",
+            "email_id": "0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1",
+            "chunk_no": 0,
+            "subject": "Marketing team weekly update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-18 19:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1-8d0d9ef167daef67.eml",
+            "excerpt": "Subject: Marketing team weekly update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-18 19:00:00+00:00\nPart: body\nThe marketing team has completed draft launch messaging.",
+            "similarity": 0.5888438224792523
+          },
+          {
+            "label": "S5",
+            "email_id": "5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb",
+            "chunk_no": 1,
+            "subject": "Q4 budget approval",
+            "sender": "Sarah Chen <sarah@example.test>",
+            "date": "2026-09-14 13:00:00+00:00",
+            "part": "q4-budget.csv",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb-cbd40aece779d0ab.eml",
+            "excerpt": "Subject: Q4 budget approval\nFrom: Sarah Chen <sarah@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-14 13:00:00+00:00\nPart: q4-budget.csv\ndepartment,amount_usd\nengineering,70000\nmarketing,50000\ncontingency_included_in_engineering,5000",
+            "similarity": 0.5803844966108744
+          },
+          {
+            "label": "S6",
+            "email_id": "35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8",
+            "chunk_no": 0,
+            "subject": "Product launch - original plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-21 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8-19801e04053bb227.eml",
+            "excerpt": "Subject: Product launch - original plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-21 15:00:00+00:00\nPart: body\nThe product launch was planned for October 15. Maya owns launch coordination. A security review is still pending.",
+            "similarity": 0.5738424736731332
+          },
+          {
+            "label": "S7",
+            "email_id": "906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943",
+            "chunk_no": 0,
+            "subject": "Re: Product launch - revised plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-24 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943-d7406164f86e7cd7.eml",
+            "excerpt": "Subject: Re: Product launch - revised plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-24 15:00:00+00:00\nPart: body\nThe product launch is moved to October 22 because the security review needs an extra week. This replaces the October 15 plan.",
+            "similarity": 0.5460853306105939
+          },
+          {
+            "label": "S8",
+            "email_id": "5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb",
+            "chunk_no": 0,
+            "subject": "Q4 budget approval",
+            "sender": "Sarah Chen <sarah@example.test>",
+            "date": "2026-09-14 13:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb-cbd40aece779d0ab.eml",
+            "excerpt": "Subject: Q4 budget approval\nFrom: Sarah Chen <sarah@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-14 13:00:00+00:00\nPart: body\nThe approved Q4 budget is $120,000. Allocate $70,000 to engineering and $50,000 to marketing. Please freeze spending plans by September 25.",
+            "similarity": 0.5256135089357629
+          }
+        ],
+        "metrics": {
+          "query_embedding_s": 0.019418416020926088,
+          "retrieval_s": 0.006395250034984201,
+          "generation_s": 15.326147583022248,
+          "total_s": 15.352387666003779,
+          "ollama_eval_count": 114,
+          "ollama_eval_duration_ns": 9392412000
+        },
+        "retrieved_chunks": 8,
+        "context_chunks": 8,
+        "coverage": "bounded retrieval; verify completeness for broad summaries"
+      },
+      "expected_source_recall": 1.0,
+      "keyword_coverage_proxy": 0.0
+    },
+    {
+      "run": 0,
+      "question": "What is the API retry policy?",
+      "result": {
+        "answer": " The API retry policy is exponential backoff with jitter, at most 5 retries. HTTP 429 and 503 are retryable. Idempotency keys are required on POST requests. [S1]",
+        "warnings": [],
+        "sources": [
+          {
+            "label": "S1",
+            "email_id": "53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df",
+            "chunk_no": 1,
+            "subject": "API integration project kickoff",
+            "sender": "Dev Patel <dev@example.test>",
+            "date": "2026-09-15 14:00:00+00:00",
+            "part": "api-checklist.txt",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df-1c5a06ffb576d003.eml",
+            "excerpt": "Subject: API integration project kickoff\nFrom: Dev Patel <dev@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-15 14:00:00+00:00\nPart: api-checklist.txt\nAPI retry policy: exponential backoff with jitter, at most 5 retries. HTTP 429 and 503 are retryable. Idempotency keys are required on POST requests.",
+            "similarity": 0.786298820090014
+          },
+          {
+            "label": "S2",
+            "email_id": "53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df",
+            "chunk_no": 0,
+            "subject": "API integration project kickoff",
+            "sender": "Dev Patel <dev@example.test>",
+            "date": "2026-09-15 14:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df-1c5a06ffb576d003.eml",
+            "excerpt": "Subject: API integration project kickoff\nFrom: Dev Patel <dev@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-15 14:00:00+00:00\nPart: body\nThe API integration project will use OAuth 2.0. Priya owns the connector. Staging integration is due October 8. The attached checklist contains retry requirements.",
+            "similarity": 0.6287806221479589
+          },
+          {
+            "label": "S3",
+            "email_id": "906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943",
+            "chunk_no": 0,
+            "subject": "Re: Product launch - revised plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-24 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943-d7406164f86e7cd7.eml",
+            "excerpt": "Subject: Re: Product launch - revised plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-24 15:00:00+00:00\nPart: body\nThe product launch is moved to October 22 because the security review needs an extra week. This replaces the October 15 plan.",
+            "similarity": 0.5697571888204264
+          },
+          {
+            "label": "S4",
+            "email_id": "35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8",
+            "chunk_no": 0,
+            "subject": "Product launch - original plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-21 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8-19801e04053bb227.eml",
+            "excerpt": "Subject: Product launch - original plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-21 15:00:00+00:00\nPart: body\nThe product launch was planned for October 15. Maya owns launch coordination. A security review is still pending.",
+            "similarity": 0.5251914359230462
+          },
+          {
+            "label": "S5",
+            "email_id": "a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81",
+            "chunk_no": 0,
+            "subject": "Marketing team final campaign update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-30 20:30:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81-55d1c5aa398935cc.eml",
+            "excerpt": "Subject: Marketing team final campaign update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-30 20:30:00+00:00\nPart: body\nThe marketing team approved the email campaign for the October 22 product launch. Campaign owner: Elena. Landing page review is due October 5.",
+            "similarity": 0.50342823575225
+          },
+          {
+            "label": "S6",
+            "email_id": "0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1",
+            "chunk_no": 0,
+            "subject": "Marketing team weekly update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-18 19:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1-8d0d9ef167daef67.eml",
+            "excerpt": "Subject: Marketing team weekly update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-18 19:00:00+00:00\nPart: body\nThe marketing team has completed draft launch messaging.",
+            "similarity": 0.5031903836003399
+          },
+          {
+            "label": "S7",
+            "email_id": "5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb",
+            "chunk_no": 1,
+            "subject": "Q4 budget approval",
+            "sender": "Sarah Chen <sarah@example.test>",
+            "date": "2026-09-14 13:00:00+00:00",
+            "part": "q4-budget.csv",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb-cbd40aece779d0ab.eml",
+            "excerpt": "Subject: Q4 budget approval\nFrom: Sarah Chen <sarah@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-14 13:00:00+00:00\nPart: q4-budget.csv\ndepartment,amount_usd\nengineering,70000\nmarketing,50000\ncontingency_included_in_engineering,5000",
+            "similarity": 0.4886742027837576
+          },
+          {
+            "label": "S8",
+            "email_id": "5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb",
+            "chunk_no": 0,
+            "subject": "Q4 budget approval",
+            "sender": "Sarah Chen <sarah@example.test>",
+            "date": "2026-09-14 13:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb-cbd40aece779d0ab.eml",
+            "excerpt": "Subject: Q4 budget approval\nFrom: Sarah Chen <sarah@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-14 13:00:00+00:00\nPart: body\nThe approved Q4 budget is $120,000. Allocate $70,000 to engineering and $50,000 to marketing. Please freeze spending plans by September 25.",
+            "similarity": 0.4427839487944325
+          }
+        ],
+        "metrics": {
+          "query_embedding_s": 0.024914083012845367,
+          "retrieval_s": 0.011386999976821244,
+          "generation_s": 10.216470041021239,
+          "total_s": 10.253555040981155,
+          "ollama_eval_count": 51,
+          "ollama_eval_duration_ns": 4196568000
+        },
+        "retrieved_chunks": 8,
+        "context_chunks": 8,
+        "coverage": "bounded retrieval; verify completeness for broad summaries"
+      },
+      "expected_source_recall": 1.0,
+      "keyword_coverage_proxy": 1.0
+    },
+    {
+      "run": 0,
+      "question": "When did I last hear from the marketing team?",
+      "result": {
+        "answer": " The newest known date when you heard from the marketing team is September 30, 2026 [S1].",
+        "warnings": [],
+        "sources": [
+          {
+            "label": "S1",
+            "email_id": "a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81",
+            "chunk_no": 0,
+            "subject": "Marketing team final campaign update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-30 20:30:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81-55d1c5aa398935cc.eml",
+            "excerpt": "Subject: Marketing team final campaign update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-30 20:30:00+00:00\nPart: body\nThe marketing team approved the email campaign for the October 22 product launch. Campaign owner: Elena. Landing page review is due October 5.",
+            "similarity": 0.7578446865082002
+          },
+          {
+            "label": "S2",
+            "email_id": "0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1",
+            "chunk_no": 0,
+            "subject": "Marketing team weekly update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-18 19:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1-8d0d9ef167daef67.eml",
+            "excerpt": "Subject: Marketing team weekly update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-18 19:00:00+00:00\nPart: body\nThe marketing team has completed draft launch messaging.",
+            "similarity": 0.7581915115232297
+          }
+        ],
+        "metrics": {
+          "query_embedding_s": 0.0301466669770889,
+          "retrieval_s": 0.010793000052217394,
+          "generation_s": 3.96031925000716,
+          "total_s": 4.001441916974727,
+          "ollama_eval_count": 27,
+          "ollama_eval_duration_ns": 2095054999
+        },
+        "retrieved_chunks": 2,
+        "context_chunks": 2,
+        "coverage": "bounded retrieval; verify completeness for broad summaries"
+      },
+      "expected_source_recall": 1.0,
+      "keyword_coverage_proxy": 0.0
+    },
+    {
+      "run": 0,
+      "question": "Summarize all conversations about the product launch",
+      "result": {
+        "answer": "Batch 1:\n The initial plan for the product launch was set for October 15, with Maya Ross owning the coordination and a security review still pending [S1]. On September 24, there was a revision to the plan. The product launch was moved to October 22 due to the need for an extra week for the security review, replacing the October 15 plan [S2]. No unresolved issues were mentioned in the provided evidence.",
+        "sources": [
+          {
+            "label": "S1",
+            "email_id": "35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8",
+            "chunk_no": 0,
+            "subject": "Product launch - original plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-21 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8-19801e04053bb227.eml",
+            "excerpt": "Subject: Product launch - original plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-21 15:00:00+00:00\nPart: body\nThe product launch was planned for October 15. Maya owns launch coordination. A security review is still pending."
+          },
+          {
+            "label": "S2",
+            "email_id": "906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943",
+            "chunk_no": 0,
+            "subject": "Re: Product launch - revised plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-24 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943-d7406164f86e7cd7.eml",
+            "excerpt": "Subject: Re: Product launch - revised plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-24 15:00:00+00:00\nPart: body\nThe product launch is moved to October 22 because the security review needs an extra week. This replaces the October 15 plan."
+          }
+        ],
+        "warnings": [],
+        "coverage": {
+          "subject_contains": "product launch",
+          "messages": 2,
+          "chunks": 2,
+          "batches": 1,
+          "note": "Complete within indexed subject filter; excludes topic mentions under other subjects."
+        },
+        "metrics": {
+          "query_embedding_s": 0.0,
+          "retrieval_s": 0.009556500008329749,
+          "generation_s": 9.262276707973797,
+          "total_s": 9.272385749965906
+        }
+      },
+      "expected_source_recall": 1.0,
+      "keyword_coverage_proxy": 1.0
+    },
+    {
+      "run": 1,
+      "question": "What did Sarah say about the Q4 budget?",
+      "result": {
+        "answer": " Sarah approved the Q4 budget, allocating $70,000 to engineering and $50,000 to marketing. [S1, S2]",
+        "warnings": [],
+        "sources": [
+          {
+            "label": "S1",
+            "email_id": "5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb",
+            "chunk_no": 0,
+            "subject": "Q4 budget approval",
+            "sender": "Sarah Chen <sarah@example.test>",
+            "date": "2026-09-14 13:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb-cbd40aece779d0ab.eml",
+            "excerpt": "Subject: Q4 budget approval\nFrom: Sarah Chen <sarah@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-14 13:00:00+00:00\nPart: body\nThe approved Q4 budget is $120,000. Allocate $70,000 to engineering and $50,000 to marketing. Please freeze spending plans by September 25.",
+            "similarity": 0.7694941666154286
+          },
+          {
+            "label": "S2",
+            "email_id": "5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb",
+            "chunk_no": 1,
+            "subject": "Q4 budget approval",
+            "sender": "Sarah Chen <sarah@example.test>",
+            "date": "2026-09-14 13:00:00+00:00",
+            "part": "q4-budget.csv",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb-cbd40aece779d0ab.eml",
+            "excerpt": "Subject: Q4 budget approval\nFrom: Sarah Chen <sarah@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-14 13:00:00+00:00\nPart: q4-budget.csv\ndepartment,amount_usd\nengineering,70000\nmarketing,50000\ncontingency_included_in_engineering,5000",
+            "similarity": 0.722155385531361
+          },
+          {
+            "label": "S3",
+            "email_id": "906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943",
+            "chunk_no": 0,
+            "subject": "Re: Product launch - revised plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-24 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943-d7406164f86e7cd7.eml",
+            "excerpt": "Subject: Re: Product launch - revised plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-24 15:00:00+00:00\nPart: body\nThe product launch is moved to October 22 because the security review needs an extra week. This replaces the October 15 plan.",
+            "similarity": 0.5262635318918824
+          },
+          {
+            "label": "S4",
+            "email_id": "a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81",
+            "chunk_no": 0,
+            "subject": "Marketing team final campaign update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-30 20:30:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81-55d1c5aa398935cc.eml",
+            "excerpt": "Subject: Marketing team final campaign update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-30 20:30:00+00:00\nPart: body\nThe marketing team approved the email campaign for the October 22 product launch. Campaign owner: Elena. Landing page review is due October 5.",
+            "similarity": 0.49997234345141806
+          },
+          {
+            "label": "S5",
+            "email_id": "35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8",
+            "chunk_no": 0,
+            "subject": "Product launch - original plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-21 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8-19801e04053bb227.eml",
+            "excerpt": "Subject: Product launch - original plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-21 15:00:00+00:00\nPart: body\nThe product launch was planned for October 15. Maya owns launch coordination. A security review is still pending.",
+            "similarity": 0.49404043243388984
+          },
+          {
+            "label": "S6",
+            "email_id": "225ad28ff1453f0011f75cf4426e286a2155a1212c9426469ebf1f55c4887223",
+            "chunk_no": 0,
+            "subject": "Friday lunch",
+            "sender": "Chris <chris@example.test>",
+            "date": "2026-09-30 16:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/225ad28ff1453f0011f75cf4426e286a2155a1212c9426469ebf1f55c4887223-5304470c0a0ddac6.eml",
+            "excerpt": "Subject: Friday lunch\nFrom: Chris <chris@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-30 16:00:00+00:00\nPart: body\nLunch is at noon at the office cafe. Please bring your own mug.",
+            "similarity": 0.47613313651880573
+          },
+          {
+            "label": "S7",
+            "email_id": "0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1",
+            "chunk_no": 0,
+            "subject": "Marketing team weekly update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-18 19:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1-8d0d9ef167daef67.eml",
+            "excerpt": "Subject: Marketing team weekly update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-18 19:00:00+00:00\nPart: body\nThe marketing team has completed draft launch messaging.",
+            "similarity": 0.47320372345381045
+          },
+          {
+            "label": "S8",
+            "email_id": "53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df",
+            "chunk_no": 1,
+            "subject": "API integration project kickoff",
+            "sender": "Dev Patel <dev@example.test>",
+            "date": "2026-09-15 14:00:00+00:00",
+            "part": "api-checklist.txt",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df-1c5a06ffb576d003.eml",
+            "excerpt": "Subject: API integration project kickoff\nFrom: Dev Patel <dev@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-15 14:00:00+00:00\nPart: api-checklist.txt\nAPI retry policy: exponential backoff with jitter, at most 5 retries. HTTP 429 and 503 are retryable. Idempotency keys are required on POST requests.",
+            "similarity": 0.45759327836057717
+          }
+        ],
+        "metrics": {
+          "query_embedding_s": 0.04463675001170486,
+          "retrieval_s": 0.01322200003778562,
+          "generation_s": 3.0721675000386313,
+          "total_s": 3.1303592080366798,
+          "ollama_eval_count": 37,
+          "ollama_eval_duration_ns": 2917363000
+        },
+        "retrieved_chunks": 8,
+        "context_chunks": 8,
+        "coverage": "bounded retrieval; verify completeness for broad summaries"
+      },
+      "expected_source_recall": 1.0,
+      "keyword_coverage_proxy": 0.6666666666666666
+    },
+    {
+      "run": 1,
+      "question": "Show me emails discussing the API integration project",
+      "result": {
+        "answer": " Based on the provided evidence, the following emails discuss the API integration project:\n\n1. S1: The email from Dev Patel with the subject \"API integration project kickoff\" provides details about the project, including the use of OAuth 2.0, the owner of the connector, and the staging integration deadline. [S1]\n\n2. S2: The attached checklist in the email from Dev Patel, also with the subject \"API integration project kickoff\", contains the API retry policy. [S2]",
+        "warnings": [],
+        "sources": [
+          {
+            "label": "S1",
+            "email_id": "53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df",
+            "chunk_no": 0,
+            "subject": "API integration project kickoff",
+            "sender": "Dev Patel <dev@example.test>",
+            "date": "2026-09-15 14:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df-1c5a06ffb576d003.eml",
+            "excerpt": "Subject: API integration project kickoff\nFrom: Dev Patel <dev@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-15 14:00:00+00:00\nPart: body\nThe API integration project will use OAuth 2.0. Priya owns the connector. Staging integration is due October 8. The attached checklist contains retry requirements.",
+            "similarity": 0.7213152217081172
+          },
+          {
+            "label": "S2",
+            "email_id": "53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df",
+            "chunk_no": 1,
+            "subject": "API integration project kickoff",
+            "sender": "Dev Patel <dev@example.test>",
+            "date": "2026-09-15 14:00:00+00:00",
+            "part": "api-checklist.txt",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df-1c5a06ffb576d003.eml",
+            "excerpt": "Subject: API integration project kickoff\nFrom: Dev Patel <dev@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-15 14:00:00+00:00\nPart: api-checklist.txt\nAPI retry policy: exponential backoff with jitter, at most 5 retries. HTTP 429 and 503 are retryable. Idempotency keys are required on POST requests.",
+            "similarity": 0.6883182359215971
+          },
+          {
+            "label": "S3",
+            "email_id": "a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81",
+            "chunk_no": 0,
+            "subject": "Marketing team final campaign update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-30 20:30:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81-55d1c5aa398935cc.eml",
+            "excerpt": "Subject: Marketing team final campaign update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-30 20:30:00+00:00\nPart: body\nThe marketing team approved the email campaign for the October 22 product launch. Campaign owner: Elena. Landing page review is due October 5.",
+            "similarity": 0.603233897493259
+          },
+          {
+            "label": "S4",
+            "email_id": "0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1",
+            "chunk_no": 0,
+            "subject": "Marketing team weekly update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-18 19:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1-8d0d9ef167daef67.eml",
+            "excerpt": "Subject: Marketing team weekly update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-18 19:00:00+00:00\nPart: body\nThe marketing team has completed draft launch messaging.",
+            "similarity": 0.5888438224792523
+          },
+          {
+            "label": "S5",
+            "email_id": "5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb",
+            "chunk_no": 1,
+            "subject": "Q4 budget approval",
+            "sender": "Sarah Chen <sarah@example.test>",
+            "date": "2026-09-14 13:00:00+00:00",
+            "part": "q4-budget.csv",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb-cbd40aece779d0ab.eml",
+            "excerpt": "Subject: Q4 budget approval\nFrom: Sarah Chen <sarah@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-14 13:00:00+00:00\nPart: q4-budget.csv\ndepartment,amount_usd\nengineering,70000\nmarketing,50000\ncontingency_included_in_engineering,5000",
+            "similarity": 0.5803844966108744
+          },
+          {
+            "label": "S6",
+            "email_id": "35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8",
+            "chunk_no": 0,
+            "subject": "Product launch - original plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-21 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8-19801e04053bb227.eml",
+            "excerpt": "Subject: Product launch - original plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-21 15:00:00+00:00\nPart: body\nThe product launch was planned for October 15. Maya owns launch coordination. A security review is still pending.",
+            "similarity": 0.5738424736731332
+          },
+          {
+            "label": "S7",
+            "email_id": "906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943",
+            "chunk_no": 0,
+            "subject": "Re: Product launch - revised plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-24 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943-d7406164f86e7cd7.eml",
+            "excerpt": "Subject: Re: Product launch - revised plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-24 15:00:00+00:00\nPart: body\nThe product launch is moved to October 22 because the security review needs an extra week. This replaces the October 15 plan.",
+            "similarity": 0.5460853306105939
+          },
+          {
+            "label": "S8",
+            "email_id": "5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb",
+            "chunk_no": 0,
+            "subject": "Q4 budget approval",
+            "sender": "Sarah Chen <sarah@example.test>",
+            "date": "2026-09-14 13:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb-cbd40aece779d0ab.eml",
+            "excerpt": "Subject: Q4 budget approval\nFrom: Sarah Chen <sarah@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-14 13:00:00+00:00\nPart: body\nThe approved Q4 budget is $120,000. Allocate $70,000 to engineering and $50,000 to marketing. Please freeze spending plans by September 25.",
+            "similarity": 0.5256135089357629
+          }
+        ],
+        "metrics": {
+          "query_embedding_s": 0.022151000041048974,
+          "retrieval_s": 0.00786166702164337,
+          "generation_s": 9.73984220798593,
+          "total_s": 9.770206750021316,
+          "ollama_eval_count": 114,
+          "ollama_eval_duration_ns": 9517075000
+        },
+        "retrieved_chunks": 8,
+        "context_chunks": 8,
+        "coverage": "bounded retrieval; verify completeness for broad summaries"
+      },
+      "expected_source_recall": 1.0,
+      "keyword_coverage_proxy": 0.0
+    },
+    {
+      "run": 1,
+      "question": "What is the API retry policy?",
+      "result": {
+        "answer": " The API retry policy is exponential backoff with jitter, at most 5 retries. HTTP 429 and 503 are retryable. Idempotency keys are required on POST requests. [S1]",
+        "warnings": [],
+        "sources": [
+          {
+            "label": "S1",
+            "email_id": "53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df",
+            "chunk_no": 1,
+            "subject": "API integration project kickoff",
+            "sender": "Dev Patel <dev@example.test>",
+            "date": "2026-09-15 14:00:00+00:00",
+            "part": "api-checklist.txt",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df-1c5a06ffb576d003.eml",
+            "excerpt": "Subject: API integration project kickoff\nFrom: Dev Patel <dev@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-15 14:00:00+00:00\nPart: api-checklist.txt\nAPI retry policy: exponential backoff with jitter, at most 5 retries. HTTP 429 and 503 are retryable. Idempotency keys are required on POST requests.",
+            "similarity": 0.786298820090014
+          },
+          {
+            "label": "S2",
+            "email_id": "53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df",
+            "chunk_no": 0,
+            "subject": "API integration project kickoff",
+            "sender": "Dev Patel <dev@example.test>",
+            "date": "2026-09-15 14:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df-1c5a06ffb576d003.eml",
+            "excerpt": "Subject: API integration project kickoff\nFrom: Dev Patel <dev@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-15 14:00:00+00:00\nPart: body\nThe API integration project will use OAuth 2.0. Priya owns the connector. Staging integration is due October 8. The attached checklist contains retry requirements.",
+            "similarity": 0.6287806221479589
+          },
+          {
+            "label": "S3",
+            "email_id": "906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943",
+            "chunk_no": 0,
+            "subject": "Re: Product launch - revised plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-24 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943-d7406164f86e7cd7.eml",
+            "excerpt": "Subject: Re: Product launch - revised plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-24 15:00:00+00:00\nPart: body\nThe product launch is moved to October 22 because the security review needs an extra week. This replaces the October 15 plan.",
+            "similarity": 0.5697571888204264
+          },
+          {
+            "label": "S4",
+            "email_id": "35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8",
+            "chunk_no": 0,
+            "subject": "Product launch - original plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-21 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8-19801e04053bb227.eml",
+            "excerpt": "Subject: Product launch - original plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-21 15:00:00+00:00\nPart: body\nThe product launch was planned for October 15. Maya owns launch coordination. A security review is still pending.",
+            "similarity": 0.5251914359230462
+          },
+          {
+            "label": "S5",
+            "email_id": "a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81",
+            "chunk_no": 0,
+            "subject": "Marketing team final campaign update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-30 20:30:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81-55d1c5aa398935cc.eml",
+            "excerpt": "Subject: Marketing team final campaign update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-30 20:30:00+00:00\nPart: body\nThe marketing team approved the email campaign for the October 22 product launch. Campaign owner: Elena. Landing page review is due October 5.",
+            "similarity": 0.50342823575225
+          },
+          {
+            "label": "S6",
+            "email_id": "0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1",
+            "chunk_no": 0,
+            "subject": "Marketing team weekly update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-18 19:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1-8d0d9ef167daef67.eml",
+            "excerpt": "Subject: Marketing team weekly update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-18 19:00:00+00:00\nPart: body\nThe marketing team has completed draft launch messaging.",
+            "similarity": 0.5031903836003399
+          },
+          {
+            "label": "S7",
+            "email_id": "5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb",
+            "chunk_no": 1,
+            "subject": "Q4 budget approval",
+            "sender": "Sarah Chen <sarah@example.test>",
+            "date": "2026-09-14 13:00:00+00:00",
+            "part": "q4-budget.csv",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb-cbd40aece779d0ab.eml",
+            "excerpt": "Subject: Q4 budget approval\nFrom: Sarah Chen <sarah@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-14 13:00:00+00:00\nPart: q4-budget.csv\ndepartment,amount_usd\nengineering,70000\nmarketing,50000\ncontingency_included_in_engineering,5000",
+            "similarity": 0.4886742027837576
+          },
+          {
+            "label": "S8",
+            "email_id": "5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb",
+            "chunk_no": 0,
+            "subject": "Q4 budget approval",
+            "sender": "Sarah Chen <sarah@example.test>",
+            "date": "2026-09-14 13:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb-cbd40aece779d0ab.eml",
+            "excerpt": "Subject: Q4 budget approval\nFrom: Sarah Chen <sarah@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-14 13:00:00+00:00\nPart: body\nThe approved Q4 budget is $120,000. Allocate $70,000 to engineering and $50,000 to marketing. Please freeze spending plans by September 25.",
+            "similarity": 0.4427839487944325
+          }
+        ],
+        "metrics": {
+          "query_embedding_s": 0.08720716595416889,
+          "retrieval_s": 0.050543124962132424,
+          "generation_s": 4.550868333026301,
+          "total_s": 4.689321915968321,
+          "ollama_eval_count": 51,
+          "ollama_eval_duration_ns": 4346928000
+        },
+        "retrieved_chunks": 8,
+        "context_chunks": 8,
+        "coverage": "bounded retrieval; verify completeness for broad summaries"
+      },
+      "expected_source_recall": 1.0,
+      "keyword_coverage_proxy": 1.0
+    },
+    {
+      "run": 1,
+      "question": "When did I last hear from the marketing team?",
+      "result": {
+        "answer": " The newest known date when you heard from the marketing team is September 30, 2026 [S1].",
+        "warnings": [],
+        "sources": [
+          {
+            "label": "S1",
+            "email_id": "a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81",
+            "chunk_no": 0,
+            "subject": "Marketing team final campaign update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-30 20:30:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81-55d1c5aa398935cc.eml",
+            "excerpt": "Subject: Marketing team final campaign update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-30 20:30:00+00:00\nPart: body\nThe marketing team approved the email campaign for the October 22 product launch. Campaign owner: Elena. Landing page review is due October 5.",
+            "similarity": 0.7578446865082002
+          },
+          {
+            "label": "S2",
+            "email_id": "0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1",
+            "chunk_no": 0,
+            "subject": "Marketing team weekly update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-18 19:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1-8d0d9ef167daef67.eml",
+            "excerpt": "Subject: Marketing team weekly update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-18 19:00:00+00:00\nPart: body\nThe marketing team has completed draft launch messaging.",
+            "similarity": 0.7581915115232297
+          }
+        ],
+        "metrics": {
+          "query_embedding_s": 0.019344625005032867,
+          "retrieval_s": 0.010609957971610129,
+          "generation_s": 2.2000942079466768,
+          "total_s": 2.230215582996607,
+          "ollama_eval_count": 27,
+          "ollama_eval_duration_ns": 2115884000
+        },
+        "retrieved_chunks": 2,
+        "context_chunks": 2,
+        "coverage": "bounded retrieval; verify completeness for broad summaries"
+      },
+      "expected_source_recall": 1.0,
+      "keyword_coverage_proxy": 0.0
+    },
+    {
+      "run": 1,
+      "question": "Summarize all conversations about the product launch",
+      "result": {
+        "answer": "Batch 1:\n The initial plan for the product launch was set for October 15, with Maya Ross owning the coordination and a security review still pending [S1]. On September 24, there was a revision to the plan. The product launch was moved to October 22 due to the need for an extra week for the security review, replacing the October 15 plan [S2]. No unresolved issues were mentioned in the provided evidence.",
+        "sources": [
+          {
+            "label": "S1",
+            "email_id": "35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8",
+            "chunk_no": 0,
+            "subject": "Product launch - original plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-21 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8-19801e04053bb227.eml",
+            "excerpt": "Subject: Product launch - original plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-21 15:00:00+00:00\nPart: body\nThe product launch was planned for October 15. Maya owns launch coordination. A security review is still pending."
+          },
+          {
+            "label": "S2",
+            "email_id": "906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943",
+            "chunk_no": 0,
+            "subject": "Re: Product launch - revised plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-24 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943-d7406164f86e7cd7.eml",
+            "excerpt": "Subject: Re: Product launch - revised plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-24 15:00:00+00:00\nPart: body\nThe product launch is moved to October 22 because the security review needs an extra week. This replaces the October 15 plan."
+          }
+        ],
+        "warnings": [],
+        "coverage": {
+          "subject_contains": "product launch",
+          "messages": 2,
+          "chunks": 2,
+          "batches": 1,
+          "note": "Complete within indexed subject filter; excludes topic mentions under other subjects."
+        },
+        "metrics": {
+          "query_embedding_s": 0.0,
+          "retrieval_s": 0.005392000020947307,
+          "generation_s": 7.838458915997762,
+          "total_s": 7.844110250007361
+        }
+      },
+      "expected_source_recall": 1.0,
+      "keyword_coverage_proxy": 1.0
+    },
+    {
+      "run": 2,
+      "question": "What did Sarah say about the Q4 budget?",
+      "result": {
+        "answer": " Sarah approved the Q4 budget, allocating $70,000 to engineering and $50,000 to marketing. [S1, S2]",
+        "warnings": [],
+        "sources": [
+          {
+            "label": "S1",
+            "email_id": "5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb",
+            "chunk_no": 0,
+            "subject": "Q4 budget approval",
+            "sender": "Sarah Chen <sarah@example.test>",
+            "date": "2026-09-14 13:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb-cbd40aece779d0ab.eml",
+            "excerpt": "Subject: Q4 budget approval\nFrom: Sarah Chen <sarah@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-14 13:00:00+00:00\nPart: body\nThe approved Q4 budget is $120,000. Allocate $70,000 to engineering and $50,000 to marketing. Please freeze spending plans by September 25.",
+            "similarity": 0.7694941666154286
+          },
+          {
+            "label": "S2",
+            "email_id": "5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb",
+            "chunk_no": 1,
+            "subject": "Q4 budget approval",
+            "sender": "Sarah Chen <sarah@example.test>",
+            "date": "2026-09-14 13:00:00+00:00",
+            "part": "q4-budget.csv",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb-cbd40aece779d0ab.eml",
+            "excerpt": "Subject: Q4 budget approval\nFrom: Sarah Chen <sarah@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-14 13:00:00+00:00\nPart: q4-budget.csv\ndepartment,amount_usd\nengineering,70000\nmarketing,50000\ncontingency_included_in_engineering,5000",
+            "similarity": 0.722155385531361
+          },
+          {
+            "label": "S3",
+            "email_id": "906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943",
+            "chunk_no": 0,
+            "subject": "Re: Product launch - revised plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-24 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943-d7406164f86e7cd7.eml",
+            "excerpt": "Subject: Re: Product launch - revised plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-24 15:00:00+00:00\nPart: body\nThe product launch is moved to October 22 because the security review needs an extra week. This replaces the October 15 plan.",
+            "similarity": 0.5262635318918824
+          },
+          {
+            "label": "S4",
+            "email_id": "a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81",
+            "chunk_no": 0,
+            "subject": "Marketing team final campaign update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-30 20:30:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81-55d1c5aa398935cc.eml",
+            "excerpt": "Subject: Marketing team final campaign update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-30 20:30:00+00:00\nPart: body\nThe marketing team approved the email campaign for the October 22 product launch. Campaign owner: Elena. Landing page review is due October 5.",
+            "similarity": 0.49997234345141806
+          },
+          {
+            "label": "S5",
+            "email_id": "35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8",
+            "chunk_no": 0,
+            "subject": "Product launch - original plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-21 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8-19801e04053bb227.eml",
+            "excerpt": "Subject: Product launch - original plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-21 15:00:00+00:00\nPart: body\nThe product launch was planned for October 15. Maya owns launch coordination. A security review is still pending.",
+            "similarity": 0.49404043243388984
+          },
+          {
+            "label": "S6",
+            "email_id": "225ad28ff1453f0011f75cf4426e286a2155a1212c9426469ebf1f55c4887223",
+            "chunk_no": 0,
+            "subject": "Friday lunch",
+            "sender": "Chris <chris@example.test>",
+            "date": "2026-09-30 16:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/225ad28ff1453f0011f75cf4426e286a2155a1212c9426469ebf1f55c4887223-5304470c0a0ddac6.eml",
+            "excerpt": "Subject: Friday lunch\nFrom: Chris <chris@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-30 16:00:00+00:00\nPart: body\nLunch is at noon at the office cafe. Please bring your own mug.",
+            "similarity": 0.47613313651880573
+          },
+          {
+            "label": "S7",
+            "email_id": "0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1",
+            "chunk_no": 0,
+            "subject": "Marketing team weekly update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-18 19:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1-8d0d9ef167daef67.eml",
+            "excerpt": "Subject: Marketing team weekly update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-18 19:00:00+00:00\nPart: body\nThe marketing team has completed draft launch messaging.",
+            "similarity": 0.47320372345381045
+          },
+          {
+            "label": "S8",
+            "email_id": "53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df",
+            "chunk_no": 1,
+            "subject": "API integration project kickoff",
+            "sender": "Dev Patel <dev@example.test>",
+            "date": "2026-09-15 14:00:00+00:00",
+            "part": "api-checklist.txt",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df-1c5a06ffb576d003.eml",
+            "excerpt": "Subject: API integration project kickoff\nFrom: Dev Patel <dev@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-15 14:00:00+00:00\nPart: api-checklist.txt\nAPI retry policy: exponential backoff with jitter, at most 5 retries. HTTP 429 and 503 are retryable. Idempotency keys are required on POST requests.",
+            "similarity": 0.45759327836057717
+          }
+        ],
+        "metrics": {
+          "query_embedding_s": 0.03330933302640915,
+          "retrieval_s": 0.009034582995809615,
+          "generation_s": 3.1571151670068502,
+          "total_s": 3.1997341249953024,
+          "ollama_eval_count": 37,
+          "ollama_eval_duration_ns": 3049288000
+        },
+        "retrieved_chunks": 8,
+        "context_chunks": 8,
+        "coverage": "bounded retrieval; verify completeness for broad summaries"
+      },
+      "expected_source_recall": 1.0,
+      "keyword_coverage_proxy": 0.6666666666666666
+    },
+    {
+      "run": 2,
+      "question": "Show me emails discussing the API integration project",
+      "result": {
+        "answer": " Based on the provided evidence, the following emails discuss the API integration project:\n\n1. S1: The email from Dev Patel with the subject \"API integration project kickoff\" provides details about the project, including the use of OAuth 2.0, the owner of the connector, and the staging integration deadline. [S1]\n\n2. S2: The attached checklist in the email from Dev Patel, also with the subject \"API integration project kickoff\", contains the API retry policy. [S2]",
+        "warnings": [],
+        "sources": [
+          {
+            "label": "S1",
+            "email_id": "53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df",
+            "chunk_no": 0,
+            "subject": "API integration project kickoff",
+            "sender": "Dev Patel <dev@example.test>",
+            "date": "2026-09-15 14:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df-1c5a06ffb576d003.eml",
+            "excerpt": "Subject: API integration project kickoff\nFrom: Dev Patel <dev@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-15 14:00:00+00:00\nPart: body\nThe API integration project will use OAuth 2.0. Priya owns the connector. Staging integration is due October 8. The attached checklist contains retry requirements.",
+            "similarity": 0.7213152217081172
+          },
+          {
+            "label": "S2",
+            "email_id": "53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df",
+            "chunk_no": 1,
+            "subject": "API integration project kickoff",
+            "sender": "Dev Patel <dev@example.test>",
+            "date": "2026-09-15 14:00:00+00:00",
+            "part": "api-checklist.txt",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df-1c5a06ffb576d003.eml",
+            "excerpt": "Subject: API integration project kickoff\nFrom: Dev Patel <dev@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-15 14:00:00+00:00\nPart: api-checklist.txt\nAPI retry policy: exponential backoff with jitter, at most 5 retries. HTTP 429 and 503 are retryable. Idempotency keys are required on POST requests.",
+            "similarity": 0.6883182359215971
+          },
+          {
+            "label": "S3",
+            "email_id": "a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81",
+            "chunk_no": 0,
+            "subject": "Marketing team final campaign update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-30 20:30:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81-55d1c5aa398935cc.eml",
+            "excerpt": "Subject: Marketing team final campaign update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-30 20:30:00+00:00\nPart: body\nThe marketing team approved the email campaign for the October 22 product launch. Campaign owner: Elena. Landing page review is due October 5.",
+            "similarity": 0.603233897493259
+          },
+          {
+            "label": "S4",
+            "email_id": "0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1",
+            "chunk_no": 0,
+            "subject": "Marketing team weekly update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-18 19:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1-8d0d9ef167daef67.eml",
+            "excerpt": "Subject: Marketing team weekly update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-18 19:00:00+00:00\nPart: body\nThe marketing team has completed draft launch messaging.",
+            "similarity": 0.5888438224792523
+          },
+          {
+            "label": "S5",
+            "email_id": "5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb",
+            "chunk_no": 1,
+            "subject": "Q4 budget approval",
+            "sender": "Sarah Chen <sarah@example.test>",
+            "date": "2026-09-14 13:00:00+00:00",
+            "part": "q4-budget.csv",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb-cbd40aece779d0ab.eml",
+            "excerpt": "Subject: Q4 budget approval\nFrom: Sarah Chen <sarah@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-14 13:00:00+00:00\nPart: q4-budget.csv\ndepartment,amount_usd\nengineering,70000\nmarketing,50000\ncontingency_included_in_engineering,5000",
+            "similarity": 0.5803844966108744
+          },
+          {
+            "label": "S6",
+            "email_id": "35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8",
+            "chunk_no": 0,
+            "subject": "Product launch - original plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-21 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8-19801e04053bb227.eml",
+            "excerpt": "Subject: Product launch - original plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-21 15:00:00+00:00\nPart: body\nThe product launch was planned for October 15. Maya owns launch coordination. A security review is still pending.",
+            "similarity": 0.5738424736731332
+          },
+          {
+            "label": "S7",
+            "email_id": "906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943",
+            "chunk_no": 0,
+            "subject": "Re: Product launch - revised plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-24 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943-d7406164f86e7cd7.eml",
+            "excerpt": "Subject: Re: Product launch - revised plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-24 15:00:00+00:00\nPart: body\nThe product launch is moved to October 22 because the security review needs an extra week. This replaces the October 15 plan.",
+            "similarity": 0.5460853306105939
+          },
+          {
+            "label": "S8",
+            "email_id": "5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb",
+            "chunk_no": 0,
+            "subject": "Q4 budget approval",
+            "sender": "Sarah Chen <sarah@example.test>",
+            "date": "2026-09-14 13:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb-cbd40aece779d0ab.eml",
+            "excerpt": "Subject: Q4 budget approval\nFrom: Sarah Chen <sarah@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-14 13:00:00+00:00\nPart: body\nThe approved Q4 budget is $120,000. Allocate $70,000 to engineering and $50,000 to marketing. Please freeze spending plans by September 25.",
+            "similarity": 0.5256135089357629
+          }
+        ],
+        "metrics": {
+          "query_embedding_s": 0.021840959030669183,
+          "retrieval_s": 0.00684633303899318,
+          "generation_s": 9.38587441702839,
+          "total_s": 9.414775250013918,
+          "ollama_eval_count": 114,
+          "ollama_eval_duration_ns": 9286397000
+        },
+        "retrieved_chunks": 8,
+        "context_chunks": 8,
+        "coverage": "bounded retrieval; verify completeness for broad summaries"
+      },
+      "expected_source_recall": 1.0,
+      "keyword_coverage_proxy": 0.0
+    },
+    {
+      "run": 2,
+      "question": "What is the API retry policy?",
+      "result": {
+        "answer": " The API retry policy is exponential backoff with jitter, at most 5 retries. HTTP 429 and 503 are retryable. Idempotency keys are required on POST requests. [S1]",
+        "warnings": [],
+        "sources": [
+          {
+            "label": "S1",
+            "email_id": "53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df",
+            "chunk_no": 1,
+            "subject": "API integration project kickoff",
+            "sender": "Dev Patel <dev@example.test>",
+            "date": "2026-09-15 14:00:00+00:00",
+            "part": "api-checklist.txt",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df-1c5a06ffb576d003.eml",
+            "excerpt": "Subject: API integration project kickoff\nFrom: Dev Patel <dev@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-15 14:00:00+00:00\nPart: api-checklist.txt\nAPI retry policy: exponential backoff with jitter, at most 5 retries. HTTP 429 and 503 are retryable. Idempotency keys are required on POST requests.",
+            "similarity": 0.786298820090014
+          },
+          {
+            "label": "S2",
+            "email_id": "53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df",
+            "chunk_no": 0,
+            "subject": "API integration project kickoff",
+            "sender": "Dev Patel <dev@example.test>",
+            "date": "2026-09-15 14:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df-1c5a06ffb576d003.eml",
+            "excerpt": "Subject: API integration project kickoff\nFrom: Dev Patel <dev@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-15 14:00:00+00:00\nPart: body\nThe API integration project will use OAuth 2.0. Priya owns the connector. Staging integration is due October 8. The attached checklist contains retry requirements.",
+            "similarity": 0.6287806221479589
+          },
+          {
+            "label": "S3",
+            "email_id": "906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943",
+            "chunk_no": 0,
+            "subject": "Re: Product launch - revised plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-24 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943-d7406164f86e7cd7.eml",
+            "excerpt": "Subject: Re: Product launch - revised plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-24 15:00:00+00:00\nPart: body\nThe product launch is moved to October 22 because the security review needs an extra week. This replaces the October 15 plan.",
+            "similarity": 0.5697571888204264
+          },
+          {
+            "label": "S4",
+            "email_id": "35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8",
+            "chunk_no": 0,
+            "subject": "Product launch - original plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-21 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8-19801e04053bb227.eml",
+            "excerpt": "Subject: Product launch - original plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-21 15:00:00+00:00\nPart: body\nThe product launch was planned for October 15. Maya owns launch coordination. A security review is still pending.",
+            "similarity": 0.5251914359230462
+          },
+          {
+            "label": "S5",
+            "email_id": "a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81",
+            "chunk_no": 0,
+            "subject": "Marketing team final campaign update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-30 20:30:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81-55d1c5aa398935cc.eml",
+            "excerpt": "Subject: Marketing team final campaign update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-30 20:30:00+00:00\nPart: body\nThe marketing team approved the email campaign for the October 22 product launch. Campaign owner: Elena. Landing page review is due October 5.",
+            "similarity": 0.50342823575225
+          },
+          {
+            "label": "S6",
+            "email_id": "0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1",
+            "chunk_no": 0,
+            "subject": "Marketing team weekly update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-18 19:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1-8d0d9ef167daef67.eml",
+            "excerpt": "Subject: Marketing team weekly update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-18 19:00:00+00:00\nPart: body\nThe marketing team has completed draft launch messaging.",
+            "similarity": 0.5031903836003399
+          },
+          {
+            "label": "S7",
+            "email_id": "5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb",
+            "chunk_no": 1,
+            "subject": "Q4 budget approval",
+            "sender": "Sarah Chen <sarah@example.test>",
+            "date": "2026-09-14 13:00:00+00:00",
+            "part": "q4-budget.csv",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb-cbd40aece779d0ab.eml",
+            "excerpt": "Subject: Q4 budget approval\nFrom: Sarah Chen <sarah@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-14 13:00:00+00:00\nPart: q4-budget.csv\ndepartment,amount_usd\nengineering,70000\nmarketing,50000\ncontingency_included_in_engineering,5000",
+            "similarity": 0.4886742027837576
+          },
+          {
+            "label": "S8",
+            "email_id": "5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb",
+            "chunk_no": 0,
+            "subject": "Q4 budget approval",
+            "sender": "Sarah Chen <sarah@example.test>",
+            "date": "2026-09-14 13:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb-cbd40aece779d0ab.eml",
+            "excerpt": "Subject: Q4 budget approval\nFrom: Sarah Chen <sarah@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-14 13:00:00+00:00\nPart: body\nThe approved Q4 budget is $120,000. Allocate $70,000 to engineering and $50,000 to marketing. Please freeze spending plans by September 25.",
+            "similarity": 0.4427839487944325
+          }
+        ],
+        "metrics": {
+          "query_embedding_s": 0.01968454197049141,
+          "retrieval_s": 0.008147542015649378,
+          "generation_s": 4.253068833029829,
+          "total_s": 4.281155749980826,
+          "ollama_eval_count": 51,
+          "ollama_eval_duration_ns": 4168987000
+        },
+        "retrieved_chunks": 8,
+        "context_chunks": 8,
+        "coverage": "bounded retrieval; verify completeness for broad summaries"
+      },
+      "expected_source_recall": 1.0,
+      "keyword_coverage_proxy": 1.0
+    },
+    {
+      "run": 2,
+      "question": "When did I last hear from the marketing team?",
+      "result": {
+        "answer": " The newest known date when you heard from the marketing team is September 30, 2026 [S1].",
+        "warnings": [],
+        "sources": [
+          {
+            "label": "S1",
+            "email_id": "a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81",
+            "chunk_no": 0,
+            "subject": "Marketing team final campaign update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-30 20:30:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81-55d1c5aa398935cc.eml",
+            "excerpt": "Subject: Marketing team final campaign update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-30 20:30:00+00:00\nPart: body\nThe marketing team approved the email campaign for the October 22 product launch. Campaign owner: Elena. Landing page review is due October 5.",
+            "similarity": 0.7578446865082002
+          },
+          {
+            "label": "S2",
+            "email_id": "0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1",
+            "chunk_no": 0,
+            "subject": "Marketing team weekly update",
+            "sender": "Marketing Team <marketing@example.test>",
+            "date": "2026-09-18 19:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1-8d0d9ef167daef67.eml",
+            "excerpt": "Subject: Marketing team weekly update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-18 19:00:00+00:00\nPart: body\nThe marketing team has completed draft launch messaging.",
+            "similarity": 0.7581915115232297
+          }
+        ],
+        "metrics": {
+          "query_embedding_s": 0.023312749981414527,
+          "retrieval_s": 0.007748040952719748,
+          "generation_s": 2.1509048749576323,
+          "total_s": 2.1821277500130236,
+          "ollama_eval_count": 27,
+          "ollama_eval_duration_ns": 2074681000
+        },
+        "retrieved_chunks": 2,
+        "context_chunks": 2,
+        "coverage": "bounded retrieval; verify completeness for broad summaries"
+      },
+      "expected_source_recall": 1.0,
+      "keyword_coverage_proxy": 0.0
+    },
+    {
+      "run": 2,
+      "question": "Summarize all conversations about the product launch",
+      "result": {
+        "answer": "Batch 1:\n The initial plan for the product launch was set for October 15, with Maya Ross owning the coordination and a security review still pending [S1]. On September 24, there was a revision to the plan. The product launch was moved to October 22 due to the need for an extra week for the security review, replacing the October 15 plan [S2]. No unresolved issues were mentioned in the provided evidence.",
+        "sources": [
+          {
+            "label": "S1",
+            "email_id": "35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8",
+            "chunk_no": 0,
+            "subject": "Product launch - original plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-21 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8-19801e04053bb227.eml",
+            "excerpt": "Subject: Product launch - original plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-21 15:00:00+00:00\nPart: body\nThe product launch was planned for October 15. Maya owns launch coordination. A security review is still pending."
+          },
+          {
+            "label": "S2",
+            "email_id": "906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943",
+            "chunk_no": 0,
+            "subject": "Re: Product launch - revised plan",
+            "sender": "Maya Ross <maya@example.test>",
+            "date": "2026-09-24 15:00:00+00:00",
+            "part": "body",
+            "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943-d7406164f86e7cd7.eml",
+            "excerpt": "Subject: Re: Product launch - revised plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-24 15:00:00+00:00\nPart: body\nThe product launch is moved to October 22 because the security review needs an extra week. This replaces the October 15 plan."
+          }
+        ],
+        "warnings": [],
+        "coverage": {
+          "subject_contains": "product launch",
+          "messages": 2,
+          "chunks": 2,
+          "batches": 1,
+          "note": "Complete within indexed subject filter; excludes topic mentions under other subjects."
+        },
+        "metrics": {
+          "query_embedding_s": 0.0,
+          "retrieval_s": 0.004947125038597733,
+          "generation_s": 7.56140016700374,
+          "total_s": 7.566517333034426
+        }
+      },
+      "expected_source_recall": 1.0,
+      "keyword_coverage_proxy": 1.0
+    }
+  ],
+  "isolation": {
+    "alice_bob_source_leaks": 0,
+    "bob_own_secret_retrieved": true,
+    "alice_result": {
+      "answer": " The provided evidence does not contain any information about the private Orion acquisition code COBALT-731.",
+      "warnings": [
+        "Model did not cite evidence; verify the source excerpts before using its answer."
+      ],
+      "sources": [
+        {
+          "label": "S1",
+          "email_id": "35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8",
+          "chunk_no": 0,
+          "subject": "Product launch - original plan",
+          "sender": "Maya Ross <maya@example.test>",
+          "date": "2026-09-21 15:00:00+00:00",
+          "part": "body",
+          "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/35e7d23952c0e5eb844af9daf8447031480562df5f3d309d3b1e0998862cc7f8-19801e04053bb227.eml",
+          "excerpt": "Subject: Product launch - original plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-21 15:00:00+00:00\nPart: body\nThe product launch was planned for October 15. Maya owns launch coordination. A security review is still pending.",
+          "similarity": 0.5028331862291545
+        },
+        {
+          "label": "S2",
+          "email_id": "906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943",
+          "chunk_no": 0,
+          "subject": "Re: Product launch - revised plan",
+          "sender": "Maya Ross <maya@example.test>",
+          "date": "2026-09-24 15:00:00+00:00",
+          "part": "body",
+          "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/906d907da4ee834c0e75d8827913ae8843f50bc0838f17a8841fcdfdb26cf943-d7406164f86e7cd7.eml",
+          "excerpt": "Subject: Re: Product launch - revised plan\nFrom: Maya Ross <maya@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-24 15:00:00+00:00\nPart: body\nThe product launch is moved to October 22 because the security review needs an extra week. This replaces the October 15 plan.",
+          "similarity": 0.48910358678060084
+        },
+        {
+          "label": "S3",
+          "email_id": "a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81",
+          "chunk_no": 0,
+          "subject": "Marketing team final campaign update",
+          "sender": "Marketing Team <marketing@example.test>",
+          "date": "2026-09-30 20:30:00+00:00",
+          "part": "body",
+          "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/a11452085812fa57c0db878f25bd9772c064b8e8bc4521bf42999520d27bea81-55d1c5aa398935cc.eml",
+          "excerpt": "Subject: Marketing team final campaign update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-30 20:30:00+00:00\nPart: body\nThe marketing team approved the email campaign for the October 22 product launch. Campaign owner: Elena. Landing page review is due October 5.",
+          "similarity": 0.4446960521468992
+        },
+        {
+          "label": "S4",
+          "email_id": "53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df",
+          "chunk_no": 1,
+          "subject": "API integration project kickoff",
+          "sender": "Dev Patel <dev@example.test>",
+          "date": "2026-09-15 14:00:00+00:00",
+          "part": "api-checklist.txt",
+          "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df-1c5a06ffb576d003.eml",
+          "excerpt": "Subject: API integration project kickoff\nFrom: Dev Patel <dev@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-15 14:00:00+00:00\nPart: api-checklist.txt\nAPI retry policy: exponential backoff with jitter, at most 5 retries. HTTP 429 and 503 are retryable. Idempotency keys are required on POST requests.",
+          "similarity": 0.44343365897436926
+        },
+        {
+          "label": "S5",
+          "email_id": "5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb",
+          "chunk_no": 1,
+          "subject": "Q4 budget approval",
+          "sender": "Sarah Chen <sarah@example.test>",
+          "date": "2026-09-14 13:00:00+00:00",
+          "part": "q4-budget.csv",
+          "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/5a7a23d0f30f6f60f5a965f277360d20a610b29aaed965b6c8c1913701eaa5eb-cbd40aece779d0ab.eml",
+          "excerpt": "Subject: Q4 budget approval\nFrom: Sarah Chen <sarah@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-14 13:00:00+00:00\nPart: q4-budget.csv\ndepartment,amount_usd\nengineering,70000\nmarketing,50000\ncontingency_included_in_engineering,5000",
+          "similarity": 0.4380321950989733
+        },
+        {
+          "label": "S6",
+          "email_id": "0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1",
+          "chunk_no": 0,
+          "subject": "Marketing team weekly update",
+          "sender": "Marketing Team <marketing@example.test>",
+          "date": "2026-09-18 19:00:00+00:00",
+          "part": "body",
+          "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/0f99e53522808285a87436315a21e9367b8f47c2a8db725aa7c3112c8ae914a1-8d0d9ef167daef67.eml",
+          "excerpt": "Subject: Marketing team weekly update\nFrom: Marketing Team <marketing@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-18 19:00:00+00:00\nPart: body\nThe marketing team has completed draft launch messaging.",
+          "similarity": 0.4162119478800397
+        },
+        {
+          "label": "S7",
+          "email_id": "53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df",
+          "chunk_no": 0,
+          "subject": "API integration project kickoff",
+          "sender": "Dev Patel <dev@example.test>",
+          "date": "2026-09-15 14:00:00+00:00",
+          "part": "body",
+          "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/53b4bdf3d493612722956a2e4949a4fcd5e69feb8c78e720baf9b2fdfb9113df-1c5a06ffb576d003.eml",
+          "excerpt": "Subject: API integration project kickoff\nFrom: Dev Patel <dev@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-15 14:00:00+00:00\nPart: body\nThe API integration project will use OAuth 2.0. Priya owns the connector. Staging integration is due October 8. The attached checklist contains retry requirements.",
+          "similarity": 0.4089688279703074
+        },
+        {
+          "label": "S8",
+          "email_id": "225ad28ff1453f0011f75cf4426e286a2155a1212c9426469ebf1f55c4887223",
+          "chunk_no": 0,
+          "subject": "Friday lunch",
+          "sender": "Chris <chris@example.test>",
+          "date": "2026-09-30 16:00:00+00:00",
+          "part": "body",
+          "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/9b359963-73ff-40f6-b106-b9c5144fd7d1/225ad28ff1453f0011f75cf4426e286a2155a1212c9426469ebf1f55c4887223-5304470c0a0ddac6.eml",
+          "excerpt": "Subject: Friday lunch\nFrom: Chris <chris@example.test>\nTo: Alice <alice@example.test>\nDate: 2026-09-30 16:00:00+00:00\nPart: body\nLunch is at noon at the office cafe. Please bring your own mug.",
+          "similarity": 0.4028000773668514
+        }
+      ],
+      "metrics": {
+        "query_embedding_s": 0.03597241605166346,
+        "retrieval_s": 0.005828583030961454,
+        "generation_s": 6.361978250031825,
+        "total_s": 6.404065208043903,
+        "ollama_eval_count": 25,
+        "ollama_eval_duration_ns": 1981521000
+      },
+      "retrieved_chunks": 8,
+      "context_chunks": 8,
+      "coverage": "bounded retrieval; verify completeness for broad summaries"
+    },
+    "bob_result": {
+      "answer": " The private Orion acquisition code is COBALT-731, as stated in the email with label S1. [S1]",
+      "warnings": [],
+      "sources": [
+        {
+          "label": "S1",
+          "email_id": "bac3dfc04d9f7af0dfff2225aa9b65f0639b200da1198a6d85eba387fbfc4308",
+          "chunk_no": 0,
+          "subject": "Orion acquisition confidential",
+          "sender": "Finance <finance@example.test>",
+          "date": "2026-09-22 14:00:00+00:00",
+          "part": "body",
+          "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/56062adc-62b2-4ec2-b444-70008703989c/bac3dfc04d9f7af0dfff2225aa9b65f0639b200da1198a6d85eba387fbfc4308-7dce094f113b10c5.eml",
+          "excerpt": "Subject: Orion acquisition confidential\nFrom: Finance <finance@example.test>\nTo: Bob <bob@example.test>\nDate: 2026-09-22 14:00:00+00:00\nPart: body\nThe private Orion acquisition code is COBALT-731. The acquisition budget is $9,300,000. This message belongs only to Bob.",
+          "similarity": 0.845542614058053
+        },
+        {
+          "label": "S2",
+          "email_id": "bd383c3213e4912d7681758569ddd7bc2a3352df0202c96e2ba8a8e8a2d32d1d",
+          "chunk_no": 0,
+          "subject": "API integration project",
+          "sender": "Leo <leo@example.test>",
+          "date": "2026-09-24 13:00:00+00:00",
+          "part": "body",
+          "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/56062adc-62b2-4ec2-b444-70008703989c/bd383c3213e4912d7681758569ddd7bc2a3352df0202c96e2ba8a8e8a2d32d1d-ec79b5f87cd42382.eml",
+          "excerpt": "Subject: API integration project\nFrom: Leo <leo@example.test>\nTo: Bob <bob@example.test>\nDate: 2026-09-24 13:00:00+00:00\nPart: body\nBob owns the internal API integration, due November 2. Use service account credentials for the internal staging system.",
+          "similarity": 0.4912351976352729
+        },
+        {
+          "label": "S3",
+          "email_id": "4cff614632cc366ff9ea88943a0d6d55eeaa7c3a55148bd71397cc667d12d7e7",
+          "chunk_no": 0,
+          "subject": "Q4 budget approval",
+          "sender": "Sarah Chen <sarah@example.test>",
+          "date": "2026-09-23 13:00:00+00:00",
+          "part": "body",
+          "url": "file:///Users/drashti/Projects/Email-RAG/email-rag/.data/sources/56062adc-62b2-4ec2-b444-70008703989c/4cff614632cc366ff9ea88943a0d6d55eeaa7c3a55148bd71397cc667d12d7e7-8f1efe8940594a45.eml",
+          "excerpt": "Subject: Q4 budget approval\nFrom: Sarah Chen <sarah@example.test>\nTo: Bob <bob@example.test>\nDate: 2026-09-23 13:00:00+00:00\nPart: body\nBob, your Q4 budget is $42,000. Allocate $30,000 to research and $12,000 to operations.",
+          "similarity": 0.4416273638676421
+        }
+      ],
+      "metrics": {
+        "query_embedding_s": 0.0308844160172157,
+        "retrieval_s": 0.01419954199809581,
+        "generation_s": 4.854036208009347,
+        "total_s": 4.89940758299781,
+        "ollama_eval_count": 31,
+        "ollama_eval_duration_ns": 2330102000
+      },
+      "retrieved_chunks": 3,
+      "context_chunks": 3,
+      "coverage": "bounded retrieval; verify completeness for broad summaries"
+    }
+  },
+  "interpretation": "Run 0 includes model warm-up. Keyword matches are not a factual-accuracy score. Manually check citations and contradictions."
+}

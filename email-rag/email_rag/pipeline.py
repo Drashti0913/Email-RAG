@@ -86,7 +86,7 @@ def ask(store, models, question, limit=8, sender=None, subject=None, latest=Fals
         answer = result['response']
     else:
         answer = 'No matching evidence was found in your indexed emails.'
-    cited = set(re.findall(r'\[(S\d+)\]', answer))
+    cited = {label for group in re.findall(r'\[(S\d+(?:\s*,\s*S\d+)*)\]', answer) for label in re.findall(r'S\d+', group)}
     allowed = {label for label, _, _ in sources}
     warnings = []
     if cited - allowed:
@@ -132,7 +132,7 @@ def summarize_all(store, models, question, subject):
         response = models.generate(prompt)['response']
         generation_s += perf_counter() - start
         answers.append(response)
-        labels = set(re.findall(r'\[(S\d+)\]', response))
+        labels = {label for group in re.findall(r'\[(S\d+(?:\s*,\s*S\d+)*)\]', response) for label in re.findall(r'S\d+', group)}
         if not labels or labels - {label for label, _, _ in batch}:
             warnings.append(f'Batch {len(answers)} has missing or unknown citations; review the evidence.')
         for label, hit, _ in batch:

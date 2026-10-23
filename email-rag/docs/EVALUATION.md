@@ -1,3 +1,41 @@
+## Local validation update — October 23, 2026
+
+This update supersedes earlier statements that local database and model
+validation had not been completed. Real Gmail integration remains unverified.
+
+### Verified locally
+- Python 3.12.15 on macOS ARM64, PostgreSQL with pgvector, and local Ollama.
+- Models: nomic-embed-text:v1.5 and mistral:7b-instruct-v0.3-q4_K_M.
+- All 38 existing tests passed across two runs: 30 ordinary tests,
+  followed by all 8 database integration tests.
+- Alice: 7 emails and 9 chunks; re-ingestion preserved these totals.
+- Body questions, attachment questions, latest-email retrieval,
+  and subject-scoped summaries were exercised.
+- Alice's subject-filtered Orion query returned no evidence.
+  Bob retrieved his own Orion email.
+- Grouped citations such as [S1, S2] are now recognized.
+
+### Live benchmark
+Source: reports/local_benchmark.json.
+Five sample questions were each run three times (15 queries).
+- Expected-source recall: 100% on these sample cases.
+- Median retrieval time: approximately 9 milliseconds.
+- Median total query time: approximately 7.57 seconds.
+- Maximum total query time: approximately 15.35 seconds.
+- No Bob-owned sources were returned to Alice in the isolation check.
+
+### Known limitations
+- These are small synthetic-data results, not production-scale guarantees.
+- Expected-source recall is not answer accuracy or retrieval precision.
+- Normal retrieval also returned irrelevant passages.
+- The launch summary incorrectly stated that no unresolved issues were
+  mentioned, despite evidence of a pending security review.
+- Citation-label validation does not verify factual support.
+- Keyword matching can miss correct answers with different wording.
+- The benchmark supplies the secret code in Alice's isolation question;
+  repetition of that code is therefore not proof of a database leak.
+- Real Gmail OAuth and ingestion still require live validation.
+
 # Evaluation report
 
 ## Evidence and current status
