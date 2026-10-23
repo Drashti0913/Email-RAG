@@ -1,3 +1,4 @@
+ loc) · 13 KB
 Personal Email RAG
 
 A local Python CLI for ingesting email, retrieving relevant passages with PostgreSQL/pgvector, and generating cited answers with Mistral through Ollama. Includes Gmail OAuth ingestion, text/PDF/DOCX attachments, two synthetic mailboxes, user capability tokens, database row-level security, repeatable benchmarks, and a two-page architecture document.
